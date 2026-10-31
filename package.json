@@ -1,0 +1,11 @@
+{
+  "name": "qr-studio",
+  "version": "1.0.0",
+  "description": "A refined offline QR code studio",
+  "author": "QR Studio",
+  "main": "src/main.cjs",
+  "scripts": {"start": "node scripts/start.cjs", "build": "electron-builder --win portable", "test": "node --test", "test:ui": "node scripts/start.cjs scripts/smoke.cjs"},
+  "dependencies": {"qrcode": "^1.5.4"},
+  "devDependencies": {"electron": "latest", "electron-builder": "latest", "jsqr": "^1.4.0", "pngjs": "^7.0.0"},
+  "build": {"appId": "studio.qr.desktop", "productName": "QR Studio", "directories": {"output": "release"}, "files": ["src/**/*", "package.json"], "win": {"target": "portable", "signAndEditExecutable": false}, "portable": {"artifactName": "QR-Studio-${version}.exe"}}
+}
